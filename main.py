@@ -9,6 +9,7 @@ import calendar
 import pyowm
 import pywhatkit
 import requests
+import pyautogui
 from bs4 import BeautifulSoup
 
 # voice, rate, volume
@@ -181,3 +182,7 @@ if __name__ == "__main__":
             for headline in headlines:
                 print(headline.text)
                 speak(headline.text)
+        elif "screenshot" in _query:
+            Screenshot = pyautogui.screenshot()
+            Screenshot.save("D:screenshot.png")
+            speak("screenshot taken please check D drive for your file")
